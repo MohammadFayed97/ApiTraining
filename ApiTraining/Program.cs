@@ -11,6 +11,7 @@ builder.Services.AddControllers();
 
 builder.Services.ConfigureCors();
 builder.Services.ConfigureLoggerService();
+builder.Services.ConfigureDbContext(builder.Configuration);
 
 var app = builder.Build();
 
