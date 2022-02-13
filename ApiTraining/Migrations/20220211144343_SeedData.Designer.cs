@@ -4,6 +4,7 @@ using Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApiTraining.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220211144343_SeedData")]
+    partial class SeedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,14 +47,14 @@ namespace ApiTraining.Migrations
                         new
                         {
                             Id = new Guid("a51b2d0a-5960-48b1-a9cf-edfe89e369de"),
-                            Address = "Elfateh, Tanta",
+                            Address = "Elfateh, Tanta, Egypt",
                             Country = "Egypt",
                             Name = "InnoTech"
                         },
                         new
                         {
                             Id = new Guid("558d3d58-915f-4611-b22d-7ef105146956"),
-                            Address = "London",
+                            Address = "London, England",
                             Country = "England",
                             Name = "SpaceX"
                         });
