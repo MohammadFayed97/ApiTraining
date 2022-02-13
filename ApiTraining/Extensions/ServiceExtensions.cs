@@ -22,6 +22,7 @@ public static class ServiceExtensions
         {
             options.UseSqlServer(configuration.GetConnectionString("DefualtConnection"), opt => opt.MigrationsAssembly("ApiTraining"));
             options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+            options.EnableSensitiveDataLogging();
         });
 
     public static void RegisterRepositoryManger(this IServiceCollection services) => services.AddScoped<IRepositoryManager, RepositoryManager>();
