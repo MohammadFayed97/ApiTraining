@@ -15,14 +15,14 @@ public class CompanyConfiguration : IEntityTypeConfiguration<Company>
         {
             Id = new Guid("a51b2d0a-5960-48b1-a9cf-edfe89e369de"),
             Name = "InnoTech",
-            Address = "Elfateh, Tanta, Egypt",
+            Address = "Elfateh, Tanta",
             Country = "Egypt"
         },
         new Company
         {
             Id = new Guid("558d3d58-915f-4611-b22d-7ef105146956"),
             Name = "SpaceX",
-            Address = "London, England",
+            Address = "London",
             Country = "England"
         });
     }
