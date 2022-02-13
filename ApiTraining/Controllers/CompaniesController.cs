@@ -25,16 +25,9 @@ public class CompaniesController : ControllerBase
     [HttpGet]
     public IActionResult GetCompanies()
     {
-        try
-        {
-            IEnumerable<CompanyViewModel> companies = _mapper.Map<IEnumerable<CompanyViewModel>>(_repository.Company.GetCompanies());
-            
-            return Ok(companies);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex.Message);
-            return StatusCode(500, "Internal Server Error");
-        }
+        throw new Exception("Exception");
+        IEnumerable<CompanyViewModel> companies = _mapper.Map<IEnumerable<CompanyViewModel>>(_repository.Company.GetCompanies());
+
+        return Ok(companies);
     }
 }
