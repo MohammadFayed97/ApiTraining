@@ -11,7 +11,9 @@ builder.Services.AddControllers();
 
 builder.Services.ConfigureCors();
 builder.Services.ConfigureLoggerService();
+builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.ConfigureDbContext(builder.Configuration);
+builder.Services.RegisterRepositoryManger();
 
 var app = builder.Build();
 
