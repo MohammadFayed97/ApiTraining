@@ -7,7 +7,7 @@
 
     public static class ExceptionMiddlewareExtensions
     {
-        public static void ConfigureExceptionHandler(this IApplicationBuilder app, ILoggerManager logger)
+        public static void ConfigureExceptionHandler(this IApplicationBuilder app, ILoggerManager? logger)
         {
             app.UseExceptionHandler(appError =>
             {
@@ -19,7 +19,7 @@
                     var contextFeature = context.Features.Get<IExceptionHandlerFeature>();
                     if(contextFeature != null)
                     {
-                        logger.LogError(contextFeature.Error.Message);
+                        logger?.LogError(contextFeature.Error.Message);
 
                         await context.Response.WriteAsync(new ErrorDetails
                         {

@@ -1,15 +1,18 @@
 ﻿namespace ApiTraining.Extensions;
 
+using Abstractions;
+
 public static class ApplicationMiddlewares
 {
 
-    public static void ConfigureApplicationMiddlewares(this WebApplication app, IWebHostEnvironment environment)
+    public static void ConfigureApplicationMiddlewares(this WebApplication app, IWebHostEnvironment environment, ILoggerManager? logger)
     {
         if (environment.IsDevelopment())
             app.UseDeveloperExceptionPage();
         else
             app.UseHsts();
 
+        app.ConfigureExceptionHandler(logger);
         app.UseHttpsRedirection();
         app.UseStaticFiles();
 

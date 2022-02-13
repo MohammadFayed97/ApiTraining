@@ -1,3 +1,4 @@
+using Abstractions;
 using ApiTraining.Extensions;
 using NLog;
 
@@ -18,6 +19,6 @@ builder.Services.RegisterRepositoryManger();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-app.ConfigureApplicationMiddlewares(builder.Environment);
+app.ConfigureApplicationMiddlewares(builder.Environment, builder.Services.BuildServiceProvider().GetService<ILoggerManager>());
 
 app.Run();
