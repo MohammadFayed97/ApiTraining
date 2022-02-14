@@ -26,4 +26,5 @@ public static class ServiceExtensions
         });
 
     public static void RegisterRepositoryManger(this IServiceCollection services) => services.AddScoped<IRepositoryManager, RepositoryManager>();
+    public static IMvcBuilder AddCustomCsvFormatter(this IMvcBuilder builder) => builder.AddMvcOptions(config => config.OutputFormatters.Add(new CsvOutputFormatter()));
 }

@@ -12,7 +12,8 @@ builder.Services.AddControllers(config =>
 {
     config.RespectBrowserAcceptHeader = true;
     config.ReturnHttpNotAcceptable = true;
-}).AddXmlDataContractSerializerFormatters();
+}).AddXmlDataContractSerializerFormatters()
+  .AddCustomCsvFormatter();
 
 builder.Services.ConfigureCors();
 builder.Services.ConfigureLoggerService();
