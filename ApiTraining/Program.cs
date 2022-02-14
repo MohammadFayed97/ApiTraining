@@ -11,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers(config =>
 {
     config.RespectBrowserAcceptHeader = true;
+    config.ReturnHttpNotAcceptable = true;
 }).AddXmlDataContractSerializerFormatters();
 
 builder.Services.ConfigureCors();
