@@ -25,7 +25,6 @@ public class CompaniesController : ControllerBase
     [HttpGet]
     public IActionResult GetCompanies()
     {
-        throw new Exception("Exception");
         IEnumerable<CompanyViewModel> companies = _mapper.Map<IEnumerable<CompanyViewModel>>(_repository.Company.GetCompanies());
 
         return Ok(companies);
