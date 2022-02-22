@@ -17,9 +17,9 @@ public abstract class BaseRepository<TEntity> : IBaseRepository<TEntity>
 
     public virtual void Delete(TEntity entity) => _context.Set<TEntity>().Remove(entity);
 
-    public virtual IEnumerable<TEntity> FindAll() => _context.Set<TEntity>();
+    public virtual IQueryable<TEntity> FindAll() => _context.Set<TEntity>();
 
-    public virtual IEnumerable<TEntity> FindByCondition(Expression<Func<TEntity, bool>> expression) => _context.Set<TEntity>().Where(expression);
+    public virtual IQueryable<TEntity> FindByCondition(Expression<Func<TEntity, bool>> expression) => _context.Set<TEntity>().Where(expression);
 
     public virtual void Update(TEntity entity) => _context.Set<TEntity>().Update(entity);
 }
